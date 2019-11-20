@@ -1,0 +1,183 @@
+using System;
+/* This Dice Roller is my first project made with what I've learned so far from watching these videos 
+   https://www.youtube.com/playlist?list=PLsrZV8shpwjMkG96rkKLdNiX02S5LPIqS
+   Thank you Bob Tabor of Oak Park :)   
+*/
+namespace DiceRoller
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool displayMenu = true;
+            while (displayMenu)
+            {
+                displayMenu = MainMenu();
+            }
+
+        }
+        
+        private static bool MainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("\nZac's Dice Roller!\n");
+            Console.WriteLine("Choose an option:");
+            Console.WriteLine("1) Roll 1x d4");
+            Console.WriteLine("2) Roll 1x d8");
+            Console.WriteLine("3) Roll 1x d20"); 
+            Console.WriteLine("4) Roll 1x d100");
+            Console.WriteLine("5) Exit");
+            Console.WriteLine("\nMultiple Rolls:\n");
+            Console.WriteLine("6) Roll 2x d4");
+            Console.WriteLine("7) Roll 2x d8");
+            Console.WriteLine("8) Roll 2x d20");
+            Console.WriteLine("9) Roll 2x d4100");
+            Console.WriteLine("\nExperimental:\n");
+            Console.WriteLine("More features soon!");
+            Console.WriteLine("\nHit Enter to Exit Application!");
+            string result = Console.ReadLine();
+            if (result == "1")
+            {
+                Rollad4();
+                return true;
+            }
+            else if (result == "2")
+            {
+                Rollad8();
+                return true;
+            }
+            else if (result == "3")
+            {
+                Rollad20();
+                return true;
+            }
+            else if (result == "4")
+            {
+                Rollad100();
+                return true;
+            }
+            else if (result == "5")
+            {
+                return false;
+            }
+            else if (result == "6")
+            {
+                Roll2d4();
+                return true;
+            }
+            else if (result == "7")
+            {
+                Roll2d8();
+                return true;
+            }
+            else if (result == "8")
+            {
+                Roll2d20();
+                return true;
+            }
+            else if (result == "9")
+            {
+                Roll2d100();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private static void Rollad4()
+        {
+            Console.Clear();
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 5);
+            Console.WriteLine("You rolled a " + randomNumber);
+            Console.WriteLine("Press enter to return to Main Menu");
+            Console.ReadLine();
+            return;
+        }
+        private static void Rollad8()
+        {
+            Console.Clear();
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 9);
+            Console.WriteLine("You rolled a " + randomNumber);
+            Console.WriteLine("Press enter to return to Main Menu");
+            Console.ReadLine();
+            return;
+        }
+        private static void Rollad20()
+        {
+            Console.Clear();
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 21);
+            Console.WriteLine("You rolled a " + randomNumber);
+            Console.WriteLine("Press enter to return to Main Menu");
+            Console.ReadLine();
+            return;
+        }
+        private static void Rollad100()
+        {
+            Console.Clear();
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 101);
+            Console.WriteLine("You rolled a " + randomNumber);
+            Console.WriteLine("Press enter to return to Main Menu");
+            Console.ReadLine();
+            return;
+        }
+        private static void Roll2d4()
+        {
+            Console.Clear();
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 5);
+            int randomNumber2 = myRandom.Next(1, 5);
+            int total = randomNumber + randomNumber2;
+            Console.WriteLine("You rolled a " + randomNumber + " and you rolled a " + randomNumber2 + " for a total of " + "{0}", total);
+            Console.WriteLine("Press enter to return to Main Menu");
+            Console.ReadLine();
+            return;
+
+
+        }
+        private static void Roll2d8()
+        {
+            Console.Clear();
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 9);
+            int randomNumber2 = myRandom.Next(1, 9);
+            int total = randomNumber + randomNumber2;
+            Console.WriteLine("You rolled a " + randomNumber + " and you rolled a " + randomNumber2 + " for a total of " + "{0}", total);
+            Console.WriteLine("Press enter to return to Main Menu");
+            Console.ReadLine();
+            return;
+
+
+        }
+        private static void Roll2d20()
+        {
+            Console.Clear();
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 21);
+            int randomNumber2 = myRandom.Next(1, 21);
+            int total = randomNumber + randomNumber2;
+            Console.WriteLine("You rolled a " + randomNumber + " and you rolled a " + randomNumber2 + " for a total of " + "{0}", total);
+            Console.WriteLine("Press enter to return to Main Menu");
+            Console.ReadLine();
+            return;
+
+
+        }
+        private static void Roll2d100()
+        {
+            Console.Clear();
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 101);
+            int randomNumber2 = myRandom.Next(1, 101);
+            int total = randomNumber + randomNumber2;
+            Console.WriteLine("You rolled a " + randomNumber + " and you rolled a " + randomNumber2 + " for a total of " + "{0}", total);
+            Console.WriteLine("Press enter to return to Main Menu");
+            Console.ReadLine();
+            return;
+        }
+    }
+}
